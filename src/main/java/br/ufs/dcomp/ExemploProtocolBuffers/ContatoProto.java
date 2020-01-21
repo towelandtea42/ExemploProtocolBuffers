@@ -126,26 +126,26 @@ public final class ContatoProto {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 matricula = 1;</code>
+     * <code>optional int32 matricula = 1;</code>
      */
     int getMatricula();
 
     /**
-     * <code>string nome = 2;</code>
+     * <code>optional string nome = 2;</code>
      */
     java.lang.String getNome();
     /**
-     * <code>string nome = 2;</code>
+     * <code>optional string nome = 2;</code>
      */
     com.google.protobuf.ByteString
         getNomeBytes();
 
     /**
-     * <code>string email = 3;</code>
+     * <code>optional string email = 3;</code>
      */
     java.lang.String getEmail();
     /**
-     * <code>string email = 3;</code>
+     * <code>optional string email = 3;</code>
      */
     com.google.protobuf.ByteString
         getEmailBytes();
@@ -181,7 +181,6 @@ public final class ContatoProto {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ExemploProtocolBuffers.Aluno)
       AlunoOrBuilder {
-  private static final long serialVersionUID = 0L;
     // Use Aluno.newBuilder() to construct.
     private Aluno(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -196,19 +195,14 @@ public final class ContatoProto {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return this.unknownFields;
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
     }
     private Aluno(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -218,8 +212,7 @@ public final class ContatoProto {
               done = true;
               break;
             default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
+              if (!input.skipField(tag)) {
                 done = true;
               }
               break;
@@ -261,7 +254,6 @@ public final class ContatoProto {
         if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
           telefones_ = java.util.Collections.unmodifiableList(telefones_);
         }
-        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -281,7 +273,7 @@ public final class ContatoProto {
     public static final int MATRICULA_FIELD_NUMBER = 1;
     private int matricula_;
     /**
-     * <code>int32 matricula = 1;</code>
+     * <code>optional int32 matricula = 1;</code>
      */
     public int getMatricula() {
       return matricula_;
@@ -290,7 +282,7 @@ public final class ContatoProto {
     public static final int NOME_FIELD_NUMBER = 2;
     private volatile java.lang.Object nome_;
     /**
-     * <code>string nome = 2;</code>
+     * <code>optional string nome = 2;</code>
      */
     public java.lang.String getNome() {
       java.lang.Object ref = nome_;
@@ -305,7 +297,7 @@ public final class ContatoProto {
       }
     }
     /**
-     * <code>string nome = 2;</code>
+     * <code>optional string nome = 2;</code>
      */
     public com.google.protobuf.ByteString
         getNomeBytes() {
@@ -324,7 +316,7 @@ public final class ContatoProto {
     public static final int EMAIL_FIELD_NUMBER = 3;
     private volatile java.lang.Object email_;
     /**
-     * <code>string email = 3;</code>
+     * <code>optional string email = 3;</code>
      */
     public java.lang.String getEmail() {
       java.lang.Object ref = email_;
@@ -339,7 +331,7 @@ public final class ContatoProto {
       }
     }
     /**
-     * <code>string email = 3;</code>
+     * <code>optional string email = 3;</code>
      */
     public com.google.protobuf.ByteString
         getEmailBytes() {
@@ -414,7 +406,6 @@ public final class ContatoProto {
       for (int i = 0; i < telefones_.size(); i++) {
         output.writeMessage(4, telefones_.get(i));
       }
-      unknownFields.writeTo(output);
     }
 
     public int getSerializedSize() {
@@ -436,11 +427,11 @@ public final class ContatoProto {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, telefones_.get(i));
       }
-      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
+    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -460,7 +451,6 @@ public final class ContatoProto {
           .equals(other.getEmail());
       result = result && getTelefonesList()
           .equals(other.getTelefonesList());
-      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -470,7 +460,7 @@ public final class ContatoProto {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (19 * hash) + getDescriptorForType().hashCode();
       hash = (37 * hash) + MATRICULA_FIELD_NUMBER;
       hash = (53 * hash) + getMatricula();
       hash = (37 * hash) + NOME_FIELD_NUMBER;
@@ -486,17 +476,6 @@ public final class ContatoProto {
       return hash;
     }
 
-    public static br.ufs.dcomp.ExemploProtocolBuffers.ContatoProto.Aluno parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static br.ufs.dcomp.ExemploProtocolBuffers.ContatoProto.Aluno parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
     public static br.ufs.dcomp.ExemploProtocolBuffers.ContatoProto.Aluno parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -669,7 +648,7 @@ public final class ContatoProto {
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.setField(field, value);
       }
       public Builder clearField(
@@ -682,12 +661,12 @@ public final class ContatoProto {
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index, Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -738,7 +717,6 @@ public final class ContatoProto {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -768,13 +746,13 @@ public final class ContatoProto {
 
       private int matricula_ ;
       /**
-       * <code>int32 matricula = 1;</code>
+       * <code>optional int32 matricula = 1;</code>
        */
       public int getMatricula() {
         return matricula_;
       }
       /**
-       * <code>int32 matricula = 1;</code>
+       * <code>optional int32 matricula = 1;</code>
        */
       public Builder setMatricula(int value) {
         
@@ -783,7 +761,7 @@ public final class ContatoProto {
         return this;
       }
       /**
-       * <code>int32 matricula = 1;</code>
+       * <code>optional int32 matricula = 1;</code>
        */
       public Builder clearMatricula() {
         
@@ -794,7 +772,7 @@ public final class ContatoProto {
 
       private java.lang.Object nome_ = "";
       /**
-       * <code>string nome = 2;</code>
+       * <code>optional string nome = 2;</code>
        */
       public java.lang.String getNome() {
         java.lang.Object ref = nome_;
@@ -809,7 +787,7 @@ public final class ContatoProto {
         }
       }
       /**
-       * <code>string nome = 2;</code>
+       * <code>optional string nome = 2;</code>
        */
       public com.google.protobuf.ByteString
           getNomeBytes() {
@@ -825,7 +803,7 @@ public final class ContatoProto {
         }
       }
       /**
-       * <code>string nome = 2;</code>
+       * <code>optional string nome = 2;</code>
        */
       public Builder setNome(
           java.lang.String value) {
@@ -838,7 +816,7 @@ public final class ContatoProto {
         return this;
       }
       /**
-       * <code>string nome = 2;</code>
+       * <code>optional string nome = 2;</code>
        */
       public Builder clearNome() {
         
@@ -847,7 +825,7 @@ public final class ContatoProto {
         return this;
       }
       /**
-       * <code>string nome = 2;</code>
+       * <code>optional string nome = 2;</code>
        */
       public Builder setNomeBytes(
           com.google.protobuf.ByteString value) {
@@ -863,7 +841,7 @@ public final class ContatoProto {
 
       private java.lang.Object email_ = "";
       /**
-       * <code>string email = 3;</code>
+       * <code>optional string email = 3;</code>
        */
       public java.lang.String getEmail() {
         java.lang.Object ref = email_;
@@ -878,7 +856,7 @@ public final class ContatoProto {
         }
       }
       /**
-       * <code>string email = 3;</code>
+       * <code>optional string email = 3;</code>
        */
       public com.google.protobuf.ByteString
           getEmailBytes() {
@@ -894,7 +872,7 @@ public final class ContatoProto {
         }
       }
       /**
-       * <code>string email = 3;</code>
+       * <code>optional string email = 3;</code>
        */
       public Builder setEmail(
           java.lang.String value) {
@@ -907,7 +885,7 @@ public final class ContatoProto {
         return this;
       }
       /**
-       * <code>string email = 3;</code>
+       * <code>optional string email = 3;</code>
        */
       public Builder clearEmail() {
         
@@ -916,7 +894,7 @@ public final class ContatoProto {
         return this;
       }
       /**
-       * <code>string email = 3;</code>
+       * <code>optional string email = 3;</code>
        */
       public Builder setEmailBytes(
           com.google.protobuf.ByteString value) {
@@ -1171,12 +1149,12 @@ public final class ContatoProto {
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return this;
       }
 
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
+        return this;
       }
 
 
@@ -1199,7 +1177,7 @@ public final class ContatoProto {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Aluno(input, extensionRegistry);
+          return new Aluno(input, extensionRegistry);
       }
     };
 
@@ -1223,21 +1201,21 @@ public final class ContatoProto {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string numero = 1;</code>
+     * <code>optional string numero = 1;</code>
      */
     java.lang.String getNumero();
     /**
-     * <code>string numero = 1;</code>
+     * <code>optional string numero = 1;</code>
      */
     com.google.protobuf.ByteString
         getNumeroBytes();
 
     /**
-     * <code>.ExemploProtocolBuffers.Tipo tipo = 2;</code>
+     * <code>optional .ExemploProtocolBuffers.Tipo tipo = 2;</code>
      */
     int getTipoValue();
     /**
-     * <code>.ExemploProtocolBuffers.Tipo tipo = 2;</code>
+     * <code>optional .ExemploProtocolBuffers.Tipo tipo = 2;</code>
      */
     br.ufs.dcomp.ExemploProtocolBuffers.ContatoProto.Tipo getTipo();
   }
@@ -1248,7 +1226,6 @@ public final class ContatoProto {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ExemploProtocolBuffers.Telefone)
       TelefoneOrBuilder {
-  private static final long serialVersionUID = 0L;
     // Use Telefone.newBuilder() to construct.
     private Telefone(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1261,19 +1238,14 @@ public final class ContatoProto {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return this.unknownFields;
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
     }
     private Telefone(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -1283,8 +1255,7 @@ public final class ContatoProto {
               done = true;
               break;
             default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
+              if (!input.skipField(tag)) {
                 done = true;
               }
               break;
@@ -1309,7 +1280,6 @@ public final class ContatoProto {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -1328,7 +1298,7 @@ public final class ContatoProto {
     public static final int NUMERO_FIELD_NUMBER = 1;
     private volatile java.lang.Object numero_;
     /**
-     * <code>string numero = 1;</code>
+     * <code>optional string numero = 1;</code>
      */
     public java.lang.String getNumero() {
       java.lang.Object ref = numero_;
@@ -1343,7 +1313,7 @@ public final class ContatoProto {
       }
     }
     /**
-     * <code>string numero = 1;</code>
+     * <code>optional string numero = 1;</code>
      */
     public com.google.protobuf.ByteString
         getNumeroBytes() {
@@ -1362,13 +1332,13 @@ public final class ContatoProto {
     public static final int TIPO_FIELD_NUMBER = 2;
     private int tipo_;
     /**
-     * <code>.ExemploProtocolBuffers.Tipo tipo = 2;</code>
+     * <code>optional .ExemploProtocolBuffers.Tipo tipo = 2;</code>
      */
     public int getTipoValue() {
       return tipo_;
     }
     /**
-     * <code>.ExemploProtocolBuffers.Tipo tipo = 2;</code>
+     * <code>optional .ExemploProtocolBuffers.Tipo tipo = 2;</code>
      */
     public br.ufs.dcomp.ExemploProtocolBuffers.ContatoProto.Tipo getTipo() {
       br.ufs.dcomp.ExemploProtocolBuffers.ContatoProto.Tipo result = br.ufs.dcomp.ExemploProtocolBuffers.ContatoProto.Tipo.valueOf(tipo_);
@@ -1393,7 +1363,6 @@ public final class ContatoProto {
       if (tipo_ != br.ufs.dcomp.ExemploProtocolBuffers.ContatoProto.Tipo.MOVEL.getNumber()) {
         output.writeEnum(2, tipo_);
       }
-      unknownFields.writeTo(output);
     }
 
     public int getSerializedSize() {
@@ -1408,11 +1377,11 @@ public final class ContatoProto {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(2, tipo_);
       }
-      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
+    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -1427,7 +1396,6 @@ public final class ContatoProto {
       result = result && getNumero()
           .equals(other.getNumero());
       result = result && tipo_ == other.tipo_;
-      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -1437,7 +1405,7 @@ public final class ContatoProto {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (19 * hash) + getDescriptorForType().hashCode();
       hash = (37 * hash) + NUMERO_FIELD_NUMBER;
       hash = (53 * hash) + getNumero().hashCode();
       hash = (37 * hash) + TIPO_FIELD_NUMBER;
@@ -1447,17 +1415,6 @@ public final class ContatoProto {
       return hash;
     }
 
-    public static br.ufs.dcomp.ExemploProtocolBuffers.ContatoProto.Telefone parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static br.ufs.dcomp.ExemploProtocolBuffers.ContatoProto.Telefone parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
     public static br.ufs.dcomp.ExemploProtocolBuffers.ContatoProto.Telefone parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1608,7 +1565,7 @@ public final class ContatoProto {
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.setField(field, value);
       }
       public Builder clearField(
@@ -1621,12 +1578,12 @@ public final class ContatoProto {
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index, Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -1647,7 +1604,6 @@ public final class ContatoProto {
         if (other.tipo_ != 0) {
           setTipoValue(other.getTipoValue());
         }
-        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -1676,7 +1632,7 @@ public final class ContatoProto {
 
       private java.lang.Object numero_ = "";
       /**
-       * <code>string numero = 1;</code>
+       * <code>optional string numero = 1;</code>
        */
       public java.lang.String getNumero() {
         java.lang.Object ref = numero_;
@@ -1691,7 +1647,7 @@ public final class ContatoProto {
         }
       }
       /**
-       * <code>string numero = 1;</code>
+       * <code>optional string numero = 1;</code>
        */
       public com.google.protobuf.ByteString
           getNumeroBytes() {
@@ -1707,7 +1663,7 @@ public final class ContatoProto {
         }
       }
       /**
-       * <code>string numero = 1;</code>
+       * <code>optional string numero = 1;</code>
        */
       public Builder setNumero(
           java.lang.String value) {
@@ -1720,7 +1676,7 @@ public final class ContatoProto {
         return this;
       }
       /**
-       * <code>string numero = 1;</code>
+       * <code>optional string numero = 1;</code>
        */
       public Builder clearNumero() {
         
@@ -1729,7 +1685,7 @@ public final class ContatoProto {
         return this;
       }
       /**
-       * <code>string numero = 1;</code>
+       * <code>optional string numero = 1;</code>
        */
       public Builder setNumeroBytes(
           com.google.protobuf.ByteString value) {
@@ -1745,13 +1701,13 @@ public final class ContatoProto {
 
       private int tipo_ = 0;
       /**
-       * <code>.ExemploProtocolBuffers.Tipo tipo = 2;</code>
+       * <code>optional .ExemploProtocolBuffers.Tipo tipo = 2;</code>
        */
       public int getTipoValue() {
         return tipo_;
       }
       /**
-       * <code>.ExemploProtocolBuffers.Tipo tipo = 2;</code>
+       * <code>optional .ExemploProtocolBuffers.Tipo tipo = 2;</code>
        */
       public Builder setTipoValue(int value) {
         tipo_ = value;
@@ -1759,14 +1715,14 @@ public final class ContatoProto {
         return this;
       }
       /**
-       * <code>.ExemploProtocolBuffers.Tipo tipo = 2;</code>
+       * <code>optional .ExemploProtocolBuffers.Tipo tipo = 2;</code>
        */
       public br.ufs.dcomp.ExemploProtocolBuffers.ContatoProto.Tipo getTipo() {
         br.ufs.dcomp.ExemploProtocolBuffers.ContatoProto.Tipo result = br.ufs.dcomp.ExemploProtocolBuffers.ContatoProto.Tipo.valueOf(tipo_);
         return result == null ? br.ufs.dcomp.ExemploProtocolBuffers.ContatoProto.Tipo.UNRECOGNIZED : result;
       }
       /**
-       * <code>.ExemploProtocolBuffers.Tipo tipo = 2;</code>
+       * <code>optional .ExemploProtocolBuffers.Tipo tipo = 2;</code>
        */
       public Builder setTipo(br.ufs.dcomp.ExemploProtocolBuffers.ContatoProto.Tipo value) {
         if (value == null) {
@@ -1778,7 +1734,7 @@ public final class ContatoProto {
         return this;
       }
       /**
-       * <code>.ExemploProtocolBuffers.Tipo tipo = 2;</code>
+       * <code>optional .ExemploProtocolBuffers.Tipo tipo = 2;</code>
        */
       public Builder clearTipo() {
         
@@ -1788,12 +1744,12 @@ public final class ContatoProto {
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return this;
       }
 
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
+        return this;
       }
 
 
@@ -1816,7 +1772,7 @@ public final class ContatoProto {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Telefone(input, extensionRegistry);
+          return new Telefone(input, extensionRegistry);
       }
     };
 
